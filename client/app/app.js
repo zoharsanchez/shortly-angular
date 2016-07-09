@@ -68,6 +68,5 @@ angular.module('shortly', [
     } else if (next.$$route && next.$$route.authenticate && !Auth.isAuth()) {
       $location.path('/signin');
     }
-
   });
 });

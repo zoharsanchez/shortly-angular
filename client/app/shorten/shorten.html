@@ -1,7 +1,8 @@
 <div class="creator" ng-controller="ShortenController">
-  <form ng-submit='addLink()'>
-      <input class='text' type='text' name='url' ng-model='url'>
-      <input type='submit' value='Shorten'>
+  <form name="urlForm" ng-submit='addLink()'>
+      <input class='text' type='text' name='url' ng-model='url' ng-pattern='rValidUrl'>
+      <p ng-show="urlForm.url.$invalid">Not a valid url</p>
+      <input type='submit' value='Shorten' ng-disabled="urlForm.url.$invalid">
   </form>
   <img class='spinner' src='/spiffygif_46x46.gif'>
   <div class='message'></div>
