@@ -31,11 +31,11 @@ h1 {
   float: left;
 }
 
-.navigation .logout {
+.navigation .signout {
   float: right;
 }
 
-.navigation li a , .logout {
+.navigation li a , .signout {
   width: 100px;
   height: 20px;
   line-height: 20px;
