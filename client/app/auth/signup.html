@@ -1,9 +1,11 @@
 <div id='signup'>
   <h1>signup</h1>
   <form name="signupForm" ng-submit='signup()'>
-    <input type='text' ng-model='user.username'>
-    <input type="password" ng-model='user.password'>
-    <button>signup</button>
+    <input name="name" type='text' ng-model='user.username' ng-required="true" ng-pattern="validUsername" ng-minlength="5" ng-maxlength="15">
+    <p class="warning" ng-show="!signupForm.name.$pristine && signupForm.name.$invalid">Username can only contain letters, numbers, _, and -, and between 5 and 15 characters</p>
+    <input name="password" type="password" ng-model='user.password' ng-required="true" ng-minlength="7">
+    <p class="warning" ng-show="!signupForm.password.$pristine && signupForm.password.$invalid">Password needs to be at least 7 characters</p>
+    <button ng-disabled="signupForm.name.$invalid || signupForm.password.$invalid">signup</button>
   </form>
   <a href="#/signin">Already have an account? <strong>Signin</strong> ...</a>
 </div>
